@@ -1,2 +1,2 @@
 FROM mprasil/dokuwiki
-RUN apt-get update && apt-get install php-sqlite3
+RUN apt-get update && apt-get install -y php-sqlite3
