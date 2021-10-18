@@ -3,7 +3,7 @@ name: Build Docker Images
 on:
   push:
     branches:
-      - master
+      - main
   workflow_dispatch:
   schedule:
     - cron: '0 0 * * *'
@@ -34,3 +34,11 @@ jobs:
         with:
           push: true
           tags: vincowl/dokuwiki:latest, vincowl/dokuwiki:${{ steps.dw-version.outputs.dw-version}}
+
+      - name: Update DockerHub description
+        uses: peter-evans/dockerhub-description@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+          repository: vincowl/dokuwiki
+          short-description: ${{ github.event.repository.description }}
