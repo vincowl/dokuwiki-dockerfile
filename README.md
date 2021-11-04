@@ -1,3 +1,5 @@
+![foo](https://github.com/vincowl/dokuwiki-dockerfile/actions/workflows/dockerhub.yml/badge.svg)
+
 **Docker image based on [mprasil/dokuwiki](https://hub.docker.com/r/mprasil/dokuwiki).**
 
 Add : 
