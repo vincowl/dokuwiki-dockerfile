@@ -36,7 +36,7 @@ jobs:
           tags: vincowl/dokuwiki:latest, vincowl/dokuwiki:${{ steps.dw-version.outputs.dw-version}}
 
       - name: Update DockerHub description
-        uses: peter-evans/dockerhub-description@v2
+        uses: peter-evans/dockerhub-description@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
