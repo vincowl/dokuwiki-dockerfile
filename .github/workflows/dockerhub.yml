@@ -30,7 +30,7 @@ jobs:
         run: echo "::set-output name=dw-version::$(curl -sX GET https://bitbucket.org/mprasil/docker_dokuwiki/raw/HEAD/Dockerfile | grep 'DOKUWIKI_VERSION=' | awk '{print $2}' FS='[=]')"
 
       - name: Build and push
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v5
         with:
           push: true
           tags: vincowl/dokuwiki:latest, vincowl/dokuwiki:${{ steps.dw-version.outputs.dw-version}}
